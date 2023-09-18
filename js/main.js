@@ -146,8 +146,7 @@ window.addEventListener('scroll', function () {
 // Obtén todas las secciones
 const sections = document.querySelectorAll('section');
 
-// Slider infinito de logo
+// Slider inifito
 var copy = document.querySelector(".logos-slide").cloneNode(true);
 document.querySelector(".logos").appendChild(copy);
-
 })(jQuery);
