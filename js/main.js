@@ -52,51 +52,17 @@
 
     // Botón de regreso arriba
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
+        if ($(this).scrollTop() > 50) {
             $('.back-to-top').fadeIn('slow');
         } else {
             $('.back-to-top').fadeOut('slow');
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({scrollTop: 0}, 500, 'easeInOutExpo');
         return false;
     });
 
-    // Carrusel de testimonios
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1000,
-        margin: 25,
-        dots: false,
-        loop: true,
-        center: true,
-        responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:2
-            },
-            992:{
-                items:3
-            }
-        }
-    });
-
-    // Isótopo y filtro de portafolio
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
-    $('#portfolio-flters li').on('click', function () {
-        $("#portfolio-flters li").removeClass('active');
-        $(this).addClass('active');
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
-    });
 
 // Obtiene todos los elementos de anclaje en el menú de navegación
 const navLinks = document.querySelectorAll('nav a');
@@ -146,7 +112,4 @@ window.addEventListener('scroll', function () {
 // Obtén todas las secciones
 const sections = document.querySelectorAll('section');
 
-// Slider inifito
-var copy = document.querySelector(".logos-slide").cloneNode(true);
-document.querySelector(".logos").appendChild(copy);
 })(jQuery);
